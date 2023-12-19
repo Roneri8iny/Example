@@ -1,0 +1,12 @@
+name: my-workflow 
+on: push 
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the triggering event
+        run: echo "The triggering event is ${{github.event_name}}"
+      - name: Print the OS of the runner
+        run: echo "The od of the runner is ${{runner.os}}"
+      - name: Check out repo code action
+        uses: actions/checkout@v4
